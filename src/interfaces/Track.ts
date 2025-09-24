@@ -17,7 +17,7 @@ export interface Track extends TrackMetadataBase {
   [key: string]: any;
 }
 
-export type AddTrack = Track & {
+export type AddTrack = Omit<Track, "url" | "artwork"> & {
   url: string | ResourceObject;
   artwork?: string | ResourceObject;
 };
